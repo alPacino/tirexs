@@ -326,9 +326,9 @@ defmodule Tirexs.HTTP do
     case method do
       :get    -> ( request(method, {url, []}, [], []) |> response() )
       :head   -> ( request(method, {url, []}, [], []) |> response() )
-      :delete -> ( request(method, {url, headers, content_type, []}, [], []) |> response() )
-      :put    -> ( request(method, {url, headers, content_type, body}, [], options) |> response() )
-      :post   -> ( request(method, {url, headers, content_type, body}, [], options) |> response() )
+      :delete -> ( request(method, {url, headers(), content_type, []}, [], []) |> response() )
+      :put    -> ( request(method, {url, headers(), content_type, body}, [], options) |> response() )
+      :post   -> ( request(method, {url, headers(), content_type, body}, [], options) |> response() )
     end
   end
 
